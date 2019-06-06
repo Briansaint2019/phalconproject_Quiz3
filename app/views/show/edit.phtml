@@ -1,0 +1,60 @@
+<?php include('includes/Header.php') ?>
+<a class="btn right black" href="<?= '../stamps'; ?>">Go back </a>
+
+
+
+
+<section>
+
+    <div id="new-stamp" class="card" style="overflow:scroll;">
+
+        <h3>Update Stamp</h3>
+       
+        <div class="row">
+            <form action="saveedit" method="post" class="col s12 m10">
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="id" value='<?= $stamps->id ?>' hidden>
+                        <label>ID</label>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="name" value='<?= $stamps->name ?>' required>
+                        <label>Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="unglued" value='<?= $stamps->unglued ?>' required>
+                        <label>Unglued</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="year" value='<?= $stamps->year ?>' required>
+                        <label>Year</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <label>Description</label>
+                        <textarea id="textarea1" class="materialize-textarea" name="description" required><?= $stamps->description ?></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <label>Quantity</label>
+                        <textarea id="textarea1" class="materialize-textarea" name="quantity" required><?= $stamps->quantity ?></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <?php include('includes/Footer.php') ?>

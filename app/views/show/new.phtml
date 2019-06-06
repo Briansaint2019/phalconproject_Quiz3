@@ -1,0 +1,45 @@
+<?php include('includes/Header.php') ?>
+
+<section>
+    <div id="new-stamp" style="background-color:lightGray; color: black;">
+        <h3>New Stamp</h3>
+        <div class="row">
+            <form action="save" method="post" class="col s12" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <label for="image">Add image</label>
+                        <br><br>
+                        <input type="file" id="image" name="picture">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="name" required>
+                        <label>Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="year" required>
+                        <label>year</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="description" required>
+                        <label>Description</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+                <a href="../index.php" class="btn black">Cancel </a>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<?php include('includes/Footer.php') ?>

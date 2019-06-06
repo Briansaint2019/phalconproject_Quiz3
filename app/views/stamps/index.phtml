@@ -1,0 +1,162 @@
+<style>
+    .image-style {
+        style=min-width: 10vw;
+        max-width: 10vw;
+        max-height: 20vh;
+        min-height: 20vh;
+        border-radius: 0%
+    }
+    h3{ text-align:center};
+</style>
+<h3>Stamp Collection</h1>
+<a class="btn primary black" href="<?= 'show/new'; ?>">Add New</a>
+    <table class="table class=" table-responsive">
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Description</th>
+            <th>Unglued</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        <?php
+        $pageActive = false;
+        $r = 1;
+        $r2 = 0;
+        ?>
+        <?php foreach ($stamps as $stamp) {
+
+            if ($page == 1 || $page == 0) {
+                $pageActive = true;
+                if ($r > 5) {
+                    break;
+                }
+            }
+
+            if ($page == 2) {
+                if ($r > 5) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 3) {
+                if ($r > 10) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 4) {
+                if ($r > 15) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 5) {
+                if ($r > 20) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 6) {
+                if ($r > 25) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 7) {
+                if ($r > 30) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 8) {
+                if ($r > 35) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+            if ($page == 9) {
+                if ($r > 40) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 10) {
+                        break;
+                    }
+                }
+            }
+
+            $r++;
+
+            if ($pageActive) {
+                ?>
+                <tr>
+                    <td><img src="/images/<?= $stamp->picture ?>" title='<?= $stamp->name ?>' class="image-style" /></td>
+                    <td><?= $stamp->name ?></td>
+                    <td><?= $stamp->year ?></td>
+                    <td><?= $stamp->quantity ?></td>
+                    <td><?= $stamp->description ?></td>
+                    <td><?= $stamp->unglued ?></td>
+                    <td class="text-right">
+                        <a class="btn teal" href="show?id=<?php echo $stamp->id ?>">Read More</a>
+                    </td>
+                    <td class="text-right">
+                        <a class="btn blue" href="show/edit?id=<?php echo $stamp->id ?>">Edit</a>
+                    </td>
+                    <td class="text-right">
+                        <a class="btn red" href="show/delete?id=<?php echo $stamp->id ?>">&times;</a>
+                    </td>
+                </tr>
+
+            <?php }
+    } ?>
+    </table>
+
+    <?php
+    
+    
+    $active = 'class="active"';
+    $deactive ='class="waves-effect"';
+    $status1 = $page==0 || $page==1 ? $active : $deactive;
+    $status2 = $page==2 ? $active : $deactive;
+    $status3 = $page==3 ? $active : $deactive;
+    $status4 = $page==4 ? $active : $deactive;
+    $status5 = $page==5 ? $active : $deactive;
+    $status6 = $page==6 ? $active : $deactive;
+    $status7 = $page==7 ? $active : $deactive;
+    $status8 = $page==8 ? $active : $deactive;
+    $status9 = $page==9 ? $active : $deactive;
+    
+    
+    ?>
+
+  
+  <?php include 'includes/Footer.php'; ?>
